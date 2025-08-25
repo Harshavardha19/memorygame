@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HS E-Commerce Landing Page</title>
+  <style>
+    /* Reset some defaults */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #3b82f6; /* Blue */
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #a5b4fc;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: #fbbf24; /* Yellow */
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .hero button:hover {
+      background-color: #f59e0b;
+    }
+
+    /* Featured Categories */
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px 20px;
+      background: white;
+    }
+
+    .category-card {
+      flex: 1;
+      max-width: 250px;
+      background-color: #e0e7ff;
+      border-radius: 12px;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .category-card img {
+      max-width: 100px;
+      margin-bottom: 15px;
+    }
+
+    .category-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #1e3a8a;
+    }
+
+    /* Featured Products */
+    .products {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .products h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #111827;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-info h4 {
+      margin-bottom: 10px;
+      color: #1f2937;
+    }
+
+    .product-info p {
+      color: #6b7280;
+      font-size: 0.9rem;
+      flex-grow: 1;
+    }
+
+    .product-info .price {
+      margin-top: 15px;
+      font-weight: 700;
+      color: #2563eb;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #1f2937;
+      color: #9ca3af;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    @media(max-width: 768px) {
+      .categories {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .category-card {
+        max-width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HS Shop</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Your One-Stop School Supplies Store</h2>
+      <p>Find everything you need for your classes and projects, right here.</p>
+      <button>Shop Now</button>
+    </div>
+  </section>
+
+  <section class="categories" aria-label="Featured categories">
+    <div class="category-card" tabindex="0">
+      <img src="https://img.icons8.com/color/96/000000/book--v1.png" alt="Books Icon" />
+      <h3>Books</h3>
+      <p>Textbooks, novels, and guides for every subject.</p>
+    </div>
+    <div class="category-card" tabindex="0">
+      <img src="https://img.icons8.com/color/96/000000/notebook--v1.png" alt="Stationery Icon" />
+      <h3>Stationery</h3>
+      <p>Notebooks, pens, markers, and more.</p>
+    </div>
+    <div class="category-card" tabindex="0">
+      <img src="https://img.icons8.com/color/96/000000/laptop--v1.png" alt="Tech Icon" />
+      <h3>Tech Gear</h3>
+      <p>Laptops, calculators, and gadgets.</p>
+    </div>
+  </section>
+
+  <section class="products" aria-label="Featured products">
+    <h2>Featured Products</h2>
+    <div class="product-list">
+      <article class="product-card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1584697964401-0ebcc430a588?auto=format&fit=crop&w=500&q=80" alt="Math Textbook" />
+        <div class="product-info">
+          <h4>Math Essentials Textbook</h4>
+          <p>Comprehensive guide covering all high school math topics.</p>
+          <div class="price">$39.99</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1565372910050-87b60ec35a72?auto=format&fit=crop&w=500&q=80" alt="Colorful Notebooks" />
+        <div class="product-info">
+          <h4>Colorful Notebooks Pack</h4>
+          <p>Set of 5 notebooks perfect for organizing your subjects.</p>
+          <div class="price">$14.99</div>
+        </div>
+      </article>
+
+      <article class="product-card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" alt="Scientific Calculator" />
+        <div class="product-info">
+          <h4>Scientific Calculator</h4>
+          <p>High precision calculator with advanced functions.</p>
+          <div class="price">$29.99</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 HS Shop. All rights reserved.
+  </footer>
+</body>
+</html>
